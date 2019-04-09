@@ -4,10 +4,9 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Bootstrap Agency Page Templat</title>
+        <title>{!! $title !!}</title>
         <!-- Bootstrap -->
         <link rel="stylesheet" href="{{url('assets/painel/css/bootstrap-4.0.0.css')}}" >
-        
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <body>
@@ -38,10 +37,13 @@
                             <a class="nav-link disabled" href="#">Disabled</a>
                         </li>
                     </ul>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                    <!-- PROCURAR -->
+                    <form name="formBuscar" class="form-inline my-2 my-lg-0" action="Classes/View/Busca/ResultadoBusca.php" target="_self" method="post">
+                      <div class="btn-secondary border-0"><input required="" name="buscar" class='btn btn-secondary border-0 text-center font-weight-bold' size="19" type="search" aria-label="Search"><!--<input name="procurar" class='align-baseline' type="image" id="procurar" title="Procurar" src="images/musica-searcher.png" alt="procurar" width="25" height="28" />-->
+                            <button class='btn-secondary border-0 text-center font-weight-bold' >
+                            <img src="{{url('assets/images/musica-searcher.png')}} " width="25" height="28" /></button></div>
                     </form>
+                    <!-- FIM PROCURAR -->
                 </div>
             </div>
         </nav>

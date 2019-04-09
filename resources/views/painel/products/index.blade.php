@@ -12,23 +12,30 @@
                         <h1>LISTAGEM DE PRODUTOS</h1>
                         <hr>
                         <br>
+                        <td><a class='btn btn-success' href="{{route('produtos.create')}}"><img src={{url('assets/images/cadastrar-itens-black.png')}} width="20" height="20" /> Cadastrar</a></td>
+                        <br>
                         <br>
                         <table class="table table-striped">
                             <tr>
                                 <th>nome</th>
                                 <th>descrição</th>
-                                <th></th>
-                                <th></th>
+                                <th width=260'></th>
                             </tr>
                             @foreach($products as $product)
                             <tr>
                                 <td>{{$product->name}}</td>
                                 <td>{{$product->description}}</td>
-                                <td><a class='btn btn-primary' href="#">Alterar</a></td>
-                                <td><a class='btn btn-danger' href="#">Deletar</a></td>
+                                <td><a class='btn btn-primary' href="{{route('produtos.edit', $product->id)}}"><img src={{url('assets/images/alterar-itens-black.png')}} width="20" height="20" /> Alterar</a>
+                                <a class='btn btn-secondary' href="{{route('produtos.show', $product->id)}}"><img src={{url('assets/images/eye.png')}} width="20" height="20" /> Visualizar</a></td>
                             </tr>
                             @endforeach
                         </table>
+                        <table>
+                            <tr>
+                                <td class="container-" align='center'>{!! $products->links() !!}</td>
+                            </tr>
+                        </table>
+                        
                     </div>
                 </div>
             </div>
